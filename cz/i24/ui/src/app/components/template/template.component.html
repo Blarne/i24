@@ -21,10 +21,10 @@
 			</mat-menu>
 		    <a mat-icon-button matTooltip="Nastavení" [matMenuTriggerFor]="appMenu"
 			  matTooltipPosition="below" matTooltipShowDelay="1000">
-			<mat-icon >settings</mat-icon>
+			<mat-icon class="icon-fix">settings</mat-icon>
 		</a></span>
 		<span><a mat-icon-button>
-            <img mat-card-avatar class="mat-user-avatar" src="{{ this.gravatar() }}" 
+            <img mat-card-avatar class="mat-user-avatar icon-fix" src="{{ this.gravatar() }}" 
             	matTooltip="{{ userInfo?.name }}" matTooltipPosition="left" matTooltipShowDelay="1000">
         </a></span>
 	</mat-toolbar>
