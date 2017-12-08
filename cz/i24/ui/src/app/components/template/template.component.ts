@@ -8,7 +8,7 @@ import {Md5} from 'ts-md5/dist/md5';
 
 @Component({
   selector: 'app-template',
-  templateUrl: './template.component.html'
+  templateUrl: './template.component.html',
   styleUrls: ['./template.component.css']
 })
 export class TemplateComponent implements OnInit {

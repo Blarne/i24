@@ -1,7 +1,5 @@
 <div class="container">	  
 
-	
-
 	<mat-toolbar  color="primary"> <!-- color="primary"  -->
 		<span><a mat-icon-button (click)="sidenav.toggle()" matTooltip="Hlavní nabídka" 
 			matTooltipPosition="below" matTooltipShowDelay="1000">
@@ -10,6 +8,12 @@
 		<span style="width: 10em"><b style="color: silver">i24</b>: Vhp</span>
 		<span>{{templateValues[1]}}</span>
 		<span class="fill-remaining-space"></span>
+		<span>
+		    <a mat-icon-button matTooltip="Vyhledat"
+			  matTooltipPosition="below" matTooltipShowDelay="1000">
+			<mat-icon>search</mat-icon>
+			</a>
+		</span>
 		<span>
 			<mat-menu #appMenu="matMenu" yPosition="below">
 			  <button mat-menu-item> Nastavení </button>
