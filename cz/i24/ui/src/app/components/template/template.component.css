@@ -1,0 +1,13 @@
+.mat-toolbar span {
+	margin-right: .5em;
+}
+
+.fill-remaining-space {
+	flex: 1 1 auto;
+}
+
+.mat-user-avatar {
+	border-radius: 50%;
+	width: 2.3em;
+	margin-bottom: 3px;
+}

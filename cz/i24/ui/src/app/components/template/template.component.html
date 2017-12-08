@@ -1,39 +1,47 @@
 <div class="container">	  
-	<md-sidenav-container>
-		<md-toolbar>
-			<div style="width: 100%; display: flex; justify-content: space-between;">
-				<a md-icon-button (click)="sidenav.open()">
-					<md-icon>menu</md-icon>
-				</a>
-				<a style="float: right;">
-					{{ userInfo?.name }}
-				</a>
-			</div>
-		</md-toolbar>
 
-		<md-sidenav #sidenav>
-		<md-toolbar>
-			<img src="assets/images/Angular-boot.png" width="60" />
-			<h3>AngularSpringBoilerplate</h3>
-		</md-toolbar>
+	
 
-		<md-nav-list>
-			<h3 md-subheader>Actions 1</h3>
-			<a md-list-item [routerLink]="['/customer']" (click)="sidenav.close()">Customers</a>
-			<a md-list-item href="javascript:void(0)" (click)="sidenav.close()">Link 2</a>
-			<md-divider></md-divider>
-			<h3 md-subheader>Actions 2</h3>
-			<a md-list-item (click)="logout()">Logout</a>
-		</md-nav-list>
-		</md-sidenav>
+	<mat-toolbar  color="primary"> <!-- color="primary"  -->
+		<span><a mat-icon-button (click)="sidenav.toggle()" matTooltip="Hlavní nabídka" 
+			matTooltipPosition="below" matTooltipShowDelay="1000">
+			<mat-icon >menu</mat-icon>
+		</a></span>
+		<span style="width: 10em"><b style="color: silver">i24</b>: Vhp</span>
+		<span>{{templateValues[1]}}</span>
+		<span class="fill-remaining-space"></span>
+		<span>
+			<mat-menu #appMenu="matMenu" yPosition="below">
+			  <button mat-menu-item> Nastavení </button>
+			  <button mat-menu-item> Nápověda </button>
+			</mat-menu>
+		    <a mat-icon-button matTooltip="Nastavení" [matMenuTriggerFor]="appMenu"
+			  matTooltipPosition="below" matTooltipShowDelay="1000">
+			<mat-icon >settings</mat-icon>
+		</a></span>
+		<span><a mat-icon-button>
+            <img mat-card-avatar class="mat-user-avatar" src="{{ this.gravatar() }}" 
+            	matTooltip="{{ userInfo?.name }}" matTooltipPosition="left" matTooltipShowDelay="1000">
+        </a></span>
+	</mat-toolbar>
+
+	<mat-sidenav-container>
+
+		<mat-sidenav #sidenav mode="side" opened="true" style="width: 16em">
+		
+		<mat-nav-list>
+			<h3 mat-subheader>Actions 1</h3>
+			<a mat-list-item [routerLink]="['/customer']">Customers</a>
+			<a mat-list-item href="javascript:void(0)">Link 2</a>
+			<mat-divider></mat-divider>
+			<h3 mat-subheader>Actions 2</h3>
+			<a mat-list-item (click)="logout()">Logout</a>
+		</mat-nav-list>
+		</mat-sidenav>
 		
 		<div>
-			<md-toolbar>
-				<md-icon>{{templateValues[0]}}</md-icon>
-				<h3 style="margin-left: 10px;">{{templateValues[1]}}</h3>
-			</md-toolbar>
 			<router-outlet></router-outlet>
 		</div>
 
-	</md-sidenav-container>
+	</mat-sidenav-container>
 </div>

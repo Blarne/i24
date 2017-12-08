@@ -1,7 +1,7 @@
 import {AuthService} from '../../../security/auth/auth.service';
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {MdSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
-    public snackBar: MdSnackBar
+    public snackBar: MatSnackBar
   ) {}
 
   ngOnInit () {
